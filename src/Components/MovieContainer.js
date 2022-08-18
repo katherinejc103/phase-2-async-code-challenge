@@ -3,13 +3,20 @@ import MovieCard from "./MovieCard";
 import Filter from "./Filter";
 import Search from "./Search";
 
-function MovieContainer() {
+
+function MovieContainer({movies, search, setSearch}) {
+  const movieCards = movies.map(movie => <MovieCard key={movie.id} movie={movie}/>)
+  
+  console.log(movies)
   return (
     <div>
       <h1>Watchlist</h1>
-      <Search /><br/>
-      <Filter />
-      {/* render a list of <MovieCard> components in here */} 
+      <Search movies={movies} search={search} setSearch={setSearch}  /><br/>
+      <Filter movies={movies} search={search} setSearch={setSearch}/>
+      <li>
+      {movieCards}
+      </li>
+      
     </div>
   );
 }

@@ -5,8 +5,8 @@ export default function Home() {
   return (
     <div>
         <h1>Welcome to Watchlist!</h1>
-        {/* Add link to "/movies" 
-        Add link to /movies/new  */}
+        <Link to='/movies'>Movies</Link><br></br>
+        <Link to='/movies/new'>New Movies</Link>
     </div>
     
   )
